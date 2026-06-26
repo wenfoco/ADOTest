@@ -32,6 +32,7 @@ stages:
 
 # ---------------- DEV DEPLOY ----------------
 - stage: DeployDev
+  dependsOn: BuildApp
   displayName: Deploy to DEV environment
   jobs:
 
@@ -50,6 +51,7 @@ stages:
 
 # ---------------- PROD DEPLOY ----------------
 - stage: DeployProd
+  dependsOn: BuildApp
   displayName: Deploy to PROD environment
   pool:
     vmImage: ubuntu-latest   # or windows-latest if needed
